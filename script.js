@@ -73,7 +73,7 @@ function setBackground(condition) {
   else if (cond.includes('snow')) elements.appBody.classList.add('bg-snow');
   else if (cond.includes('thunderstorm')) elements.appBody.classList.add('bg-thunderstorm');
   else if (cond.includes('haze')) elements.appBody.classList.add('bg-haze');
-  else if (cond.includes('hot')) elements.appBody.classList.add('bg-sunny');
+  else if (cond.includes('warm')) elements.appBody.classList.add('bg-sunny');
   else elements.appBody.classList.add('bg-gradient-to-b', 'from-blue-400', 'to-blue-600');
 }
 
@@ -273,3 +273,22 @@ function init() {
 }
 
 init();
+
+function applyResponsiveStyles() {
+  const cards = document.querySelectorAll('.card');
+  const width = window.innerWidth;
+
+  if (width <= 375) { // For iPhone SE
+    cards.forEach(card => card.style.flex = '1 1 100%');
+  } else if (width <= 768) { //  For iPad Mini
+    cards.forEach(card => card.style.flex = '1 1 50%');
+  } else { // For Desktop
+    cards.forEach(card => card.style.flex = '1 1 33.333%');
+  }
+}
+
+// Apply on load
+applyResponsiveStyles();
+
+// Apply on window resize
+window.addEventListener('resize', applyResponsiveStyles);
