@@ -1,26 +1,20 @@
 This Project is a Weather API that lets you get real-time and up-to-date weather updates for cities around the world. This API can provide the latest weather conditions along with a 5-day forecast.
 
 OBJECTIVES OF PROJECT -
-Retrieve weather data from a reliable API.
-Displays information in easy to understand format.
-Provide extended forecast.
+1) Retrieve weather data from a reliable API.
+2) Displays information in easy to understand format.
+3) Provide extended forecast.
 
 FEATURES -
-Fetch current weather data for any city.
-Get forecast for your current loaction.
-Get descriptive weather conditions like sunny, rainy, snowy, cloudy, etc.
-Automatic background graphics to represent weather conditions.
-Drop-down menu for recent searches.
-Simple, creative UI built using Tailwind CSS.
-Buttons and input field for selecting location.
-Event listners to update UI.
-Input validation to prevent empty or invalid searches.
-Error handling with custom error messages.
-Responsive design.
+1) Fetch current weather data for any city.
+2) Get forecast for your current loaction.
+3) Get descriptive weather conditions like sunny, rainy, snowy, cloudy, etc.
+4) Automatic background graphics to represent weather conditions.
+5) Drop-down menu for recent searches.
+6) Simple, creative UI built using Tailwind CSS.
+7) Buttons and input field for selecting location.
+8) Event listners to update UI.
+9) Input validation to prevent empty or invalid searches.
+10) Error handling with custom error messages.
+11) Responsive design.
 
-Technologies used -
-JavaScript for logic, API, and DOM manipulation.
-HTML5 - content structure.
-Tailwind CSS - styling.
-Weather API - Open Weather Map.
-Git - version control with meaningful commit messages.
