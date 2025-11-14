@@ -1,3 +1,4 @@
+//API configuration
 const API_KEY = '957af83c7e67d70bb0d1c1f62e0a6317';
 const BASE_URL = 'https://api.openweathermap.org/data/2.5/';
 
@@ -19,10 +20,12 @@ const elements = {
   appBody: document.getElementById('app-body'),
 };
 
+//Variables for temperature toggle and recent cities
 let currentTempCelsius = null;
 let isCelsius = true;
 let recentCities = [];
 
+//Save cities to recent searches
 function saveRecentCity(city) {
   if (!recentCities.includes(city)) {
     recentCities.unshift(city);
@@ -54,16 +57,19 @@ function toggleRecentList() {
   elements.recentList.classList.toggle('hidden');
 }
 
+//Showing error messages 
 function showError(message) {
   elements.errorMessage.textContent = message;
   elements.errorMessage.classList.remove('hidden');
 }
 
+//clearing error messages
 function clearError() {
   elements.errorMessage.textContent = '';
   elements.errorMessage.classList.add('hidden');
 }
 
+//For changing background graphics according to weather conditions
 function setBackground(condition) {
   elements.appBody.className = 'transition-colors duration-500 min-h-screen flex flex-col items-center p-4';
   const cond = condition.toLowerCase();
@@ -102,6 +108,7 @@ function displayCurrentWeather(data) {
   }
 }
 
+// For 5-day forecast display
 function displayForecast(data) {
   elements.forecast.innerHTML = '';
 
@@ -127,6 +134,7 @@ function displayForecast(data) {
     const icon = item.weather[0].icon;
     const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
 
+    //Forecast card
     const card = document.createElement('div');
     card.className = 'bg-teal-400 rounded p-4 text-center flex flex-col items-center shadow';
 
@@ -175,6 +183,7 @@ function toggleTemperatureUnit() {
   }
 }
 
+//To fetch weather using city name
 async function fetchWeatherByCity(city) {
   if (!city.trim()) {
     showError('Please enter a city name.');
@@ -198,6 +207,7 @@ async function fetchWeatherByCity(city) {
   }
 }
 
+//To fetch weather with geo-cordinates
 async function fetchWeatherByCoords(lat, lon) {
   clearError();
   try {
@@ -247,6 +257,7 @@ function handleRecentToggleClick() {
   }
 }
 
+//Load recent searches
 function loadRecentCities() {
   const stored = localStorage.getItem('recentCities');
   if (stored) {
@@ -274,6 +285,7 @@ function init() {
 
 init();
 
+//Responsiveness for different screen sizes
 function applyResponsiveStyles() {
   const cards = document.querySelectorAll('.card');
   const width = window.innerWidth;
