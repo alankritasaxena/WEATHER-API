@@ -76,6 +76,7 @@ function setBackground(condition) {
   else elements.appBody.classList.add('bg-gradient-to-b', 'from-blue-400', 'to-blue-600');
 }
 
+
 function displayCurrentWeather(data) {
   clearError();
   elements.cityName.textContent = `${data.name}, ${data.sys.country}`;
