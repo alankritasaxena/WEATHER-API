@@ -72,6 +72,7 @@ function setBackground(condition) {
   else if (cond.includes('rain') || cond.includes('drizzle')) elements.appBody.classList.add('bg-rain');
   else if (cond.includes('snow')) elements.appBody.classList.add('bg-snow');
   else if (cond.includes('thunderstorm')) elements.appBody.classList.add('bg-thunderstorm');
+  else if (cond.includes('haze')) elements.appBody.classList.add('bg-haze');
   else elements.appBody.classList.add('bg-gradient-to-b', 'from-blue-400', 'to-blue-600');
 }
 
