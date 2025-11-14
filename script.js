@@ -126,7 +126,7 @@ function displayForecast(data) {
     const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
 
     const card = document.createElement('div');
-    card.className = 'bg-blue-100 rounded p-4 text-center flex flex-col items-center shadow';
+    card.className = 'bg-teal-400 rounded p-4 text-center flex flex-col items-center shadow';
 
     card.innerHTML = `
       <h3 class="font-semibold mb-2">${dayName}</h3>
